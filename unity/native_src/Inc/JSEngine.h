@@ -80,6 +80,8 @@ struct FIndexedInfo
 
 static std::unique_ptr<v8::Platform> GPlatform;
 
+v8::Local<v8::ArrayBuffer> NewArrayBuffer(v8::Isolate* Isolate, void *Ptr, size_t Size, bool Copy);
+
 class JSEngine
 {
 public:
@@ -121,7 +123,7 @@ public:
 
     void DestroyInspector();
 
-    void InspectorTick();
+    bool InspectorTick();
 
     v8::Isolate* MainIsolate;
 
