@@ -18,25 +18,22 @@ namespace Puerts.UnitTest
         {
             return x;
         }
-    }
 
-    public class ArrayBufferTest
-    {
-        public ArrayBuffer AB;
 
-        public ArrayBufferTest()
+        public class Inner
         {
-            AB = new ArrayBuffer(new byte[] { 1, 2, 3 });
-        }
+            public int A = 100;
 
-        public int Sum(ArrayBuffer ab)
-        {
-            int sum = 0;
-            foreach(var b in ab.Bytes)
+            public int Add(int a, int b)
             {
-                sum += b;
+                return a + b;
             }
-            return sum;
+        }
+
+        public bool IsStringNull(string str)
+        {
+            return str == null;
         }
     }
+    
 }

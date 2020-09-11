@@ -65,14 +65,19 @@ console.log(actor.K2_GetActorLocation().ToString());
 
 ## 调试
 
-* [unreal](doc/vscode_debug_unreal.md)
-* [unity](doc/vscode_debug_unity.md)
+* [unreal](doc/unreal/vscode_debug.md)
+* [unity](doc/unity/vscode_debug.md)
+
+## 常见问题
+
+* [unreal faq](doc/unreal/faq.md)
+* [unity faq](doc/unity/faq.md)
 
 ## 支持的引擎，平台
 
 ### 引擎
 
-* unreal engine 4.22 ~ 4.25
+* unreal engine 4.22 ~ 4.24
 
 * unity 5 ~ 2019
 
