@@ -459,8 +459,9 @@ namespace puerts
         auto IndexedInfo = new FIndexedInfo(Getter, Setter, Data);
         IndexedInfos.push_back(IndexedInfo);
 
-        Templates[ClassID].Get(Isolate)->PrototypeTemplate()->SetHandler(v8::IndexedPropertyHandlerConfiguration(
-            CSharpIndexedGetterWrap, CSharpIndexedSetterWrap, nullptr, nullptr, nullptr, v8::External::New(Isolate, IndexedInfos[Pos])));
+        Templates[ClassID].Get(Isolate)->InstanceTemplate()->SetHandler(v8::IndexedPropertyHandlerConfiguration(
+            CSharpIndexedGetterWrap, CSharpIndexedSetterWrap, nullptr, nullptr, nullptr, v8::External::New(Isolate, IndexedInfos[Pos]),
+            v8::PropertyHandlerFlags::kNonMasking));
 
         return true;
     }
